@@ -102,7 +102,7 @@ describe('RestaurantService', () => {
 
       jest
         .spyOn(model, 'create')
-        .mockImplementationOnce(() => Promise.resolve(mockRestaurant));
+        .mockImplementationOnce(() => Promise.resolve(mockRestaurant) as any);
 
       const result = await service.create(
         newRestaurant as any,

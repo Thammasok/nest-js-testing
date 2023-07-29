@@ -63,7 +63,7 @@ describe('AuthService', () => {
       jest.spyOn(bcrypt, 'hash').mockResolvedValueOnce('testHash');
       jest
         .spyOn(model, 'create')
-        .mockImplementationOnce(() => Promise.resolve(mockUser));
+        .mockImplementationOnce(() => Promise.resolve(mockUser) as any);
 
       jest.spyOn(APIFeatures, 'assignJwtToken').mockResolvedValueOnce(token);
 

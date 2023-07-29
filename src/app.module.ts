@@ -14,7 +14,9 @@ import { MealModule } from './meal/meal.module';
       envFilePath: `.env.${process.env.NODE_ENV}`,
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRoot(process.env.DB_URI, {
+      connectionName: 'restaurants',
+    }),
     RestaurantsModule,
     AuthModule,
     MealModule,
